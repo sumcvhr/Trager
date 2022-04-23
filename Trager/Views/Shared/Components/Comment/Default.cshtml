@@ -1,0 +1,9 @@
+﻿@model CourierComment
+<form asp-controller="Courier" asp-action="CourierComment" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="All" class="d-flex flex-row add-comment-section mt-4 mb-4">
+        <input type="text" asp-for="Comment" class="form-control mr-3" placeholder="Yorum Yap">
+        <span asp-validation-for="Comment" class="text-danger"></span>
+        <button class="btn btn-primary" type="submit">Yorum Yap</button>
+
+    </div>
+</form>

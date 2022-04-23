@@ -1,0 +1,14 @@
+﻿
+@model List<Trager.Models.Il>
+@{
+    var ilceliste = ViewBag.Ilceler as List<Trager.Models.Ilce>;
+}
+
+<select name="il" id="il" class="form-control">
+    <option value="">İl</option>
+    @foreach (var Il in Model)
+    {
+
+        <option value="@Il.Id">@Il.Ad </option>
+    }
+</select>

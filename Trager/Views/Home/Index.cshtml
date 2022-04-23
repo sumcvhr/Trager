@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row" style="margin-right:0px">
+    <div class="col-2"> </div>
+    <div class="col-lg-8 col-md-8 col-sm-10 text-center">
+        <div class="card" style="object-fit: fill; background-color: #23272b; border: none; ">
+            <img style="object-fit: fill;" src="~/img/trglogo.svg" />
+        </div>
+    </div>
+</div>
+
+<div class="row text-center" style="margin-right:0px">
+
+    <div class="col-2"> </div>
+    <div class="col-lg-4 col-md-4 col-sm-10 text-center mt-2">
+        <a asp-controller="Courier" asp-action="CourierLogin">
+            <div class="profile-card-2" style="object-fit: fill;">
+                <img src="/img/kg.jpg" class="img img-responsive">
+                <div class="profile-name">Kurye Girişi</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-10 text-center mt-2">
+        <a asp-controller="User" asp-action="UserLogin">
+            <div class="profile-card-2" style="object-fit: fill;">
+                <img src="/img/mg.jpg" class="img img-responsive">
+                <div class="profile-name">Kullanıcı Girişi</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-2"> </div>
+</div>
+<link href="~/css/Home.css" rel="stylesheet" />

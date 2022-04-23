@@ -1,0 +1,21 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light nav-box">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand mt-2 mt-lg-0" asp-controller="User" asp-action="UserHome">
+                <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                <span class="h1 fw-bold mb-0" style="color: #ff6219;">TRAGER</span>
+            </a>
+        </div>
+        <div class="d-flex">
+
+            <a class="mx-2" @*asp-controller="Chat" asp-action="Chat"*@>
+                <i class="far fa-comment" style="color:#ffffff;"></i>
+            </a>
+            <a href="/login/Logout">
+                <i class="fas fa-sign-out-alt" style="color:#ffffff;"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<link href="~/css/UserHome.css" rel="stylesheet" />

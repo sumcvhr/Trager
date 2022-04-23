@@ -1,0 +1,22 @@
+﻿@model CourierHomeVM
+
+@if (Model.comment != null)
+{
+    foreach (var yorum in Model.comment)
+    {
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="border-dark mb-3">
+                        <div class="align-items-start">
+                            <h6> @yorum.User.UserName @yorum.User.UserLastName</h6>
+                            <p> @yorum.Comment </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    }
+}

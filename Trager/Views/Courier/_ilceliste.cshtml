@@ -1,0 +1,14 @@
+﻿@model List<Trager.Models.Ilce>
+
+<select onchange="this.form.submit" name="IlceId" id="IlceId" class="form-control">
+    <option value="">İlce</option>
+    @if (Model != null)
+    {
+        foreach (var ilce in Model)
+        {
+            <option value="@ilce.Id">@ilce.Ad </option>
+        }
+    }
+
+</select>
+<span class="text-danger"></span>

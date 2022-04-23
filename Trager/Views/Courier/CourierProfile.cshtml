@@ -1,0 +1,100 @@
+﻿
+@model CourierHomeVM
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+@await Component.InvokeAsync("UserNavbar")
+
+<div class="container bootstrap snippets bootdeys">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div id="content" class="content p-0">
+                <div class="profile-header">
+                    <div class="profile-header-cover"></div>
+                    <div class="profile-header-content">
+
+                        <div class="profile-header-img mb-4">
+
+                            <img src="@Model.courier.AvatarAdress" class="mb-4" alt="" />
+
+                        </div>
+                        <div class="profile-header-info">
+                            <h4 class="m-t-sm">@Model.courier.CourierName @Model.courier.CourierLastName</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="#homepage" role="tabpanel">
+        <div class="container bootstrap snippets bootdeys">
+            <div class="row">           
+                <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <div class="border-dark p-2 mb-3">
+                                        <div>
+                                            <form asp-controller="Courier" asp-action="CourierComment" enctype="multipart/form-data" method="post">
+                                                <input type="hidden" name="CourierId" value="@Model.courier.Id" />
+                                                <div asp-validation-summary="All" class=" flex-row add-comment-section mt-4 mb-4">
+
+                                                    <input type="text" name="Comment" class="form-control mr-3 mt-3" placeholder="Yorum Yap">
+                                                    <span class="text-danger"></span>
+                                                    <button class="btn btn-primary mt-3 " type="submit">Yorum Yap</button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        @if (Model.comment != null)
+                        {
+                            foreach (var yorum in Model.comment)
+                            {
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card mt-3">
+                                        <div class="card-body">
+                                            <div class="border-dark mb-3">
+                                                <div class="align-items-start">
+                                                    <h6> @yorum.User.UserName @yorum.User.UserLastName</h6>
+                                                    <p> @yorum.Comment </p>
+                                                    <p name="Id">@yorum.Id </p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/Il_Ilce.js"></script>
+
+
+<link href="~/css/CourierHome.css" rel="stylesheet" />

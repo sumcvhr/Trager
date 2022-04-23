@@ -1,0 +1,119 @@
+﻿@model CourierRegisterModel 
+    <head>
+        <script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    </head>
+    <section>
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center " style="overflow: visible;">
+                <div class="col-12" style="overflow: visible;">
+                    <form asp-controller="Courier" asp-action="CourierRegister" enctype="multipart/form-data" method="post">
+                        <div asp-validation-summary="All" class="card-regis card-registration " style="overflow: visible;">
+                            <div class="row g-0" style="overflow: visible;">
+                                <div class="col-xl-6 d-none d-xl-block" style="overflow: visible;">
+                                    <img src="/img/kayıt.jpg"
+                                         alt="Sample photo"
+                                         class="img-fluid" />
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card-body p-md-5 text-black">
+                                        <div class="d-flex align-items-center mb-2 pb-1">
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                            <span class="h1 fw-bold mb-0">Trager</span>
+                                        </div>
+                                        <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Kurye Kayıt</h5>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-4 col-sm-12 mt-3">
+                                                        <div class="avatar-upload">
+                                                            <div class="avatar-edit">
+                                                                <input type='file' name="CourierAvatar" id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                                <label for="imageUpload"></label>
+                                                            </div>
+                                                            <div class="avatar-preview">
+                                                                <div id="imagePreview" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqsb6lK-PlD1kHFoubbiC-jN21tqj9ADz9crJ2rBIstz1gKFPE&usqp=CAU);">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-8 col-sm-12">
+                                                        <div class="col-12 mb-3 mt-3">
+                                                            <div class="form-outline">
+                                                                <input type="text" id="form3Example1m" class="form-control form-control-lg" asp-for="CourierName" placeholder="Adınız" />
+                                                                <span asp-validation-for="CourierName" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <div class="form-outline">
+                                                                <input type="text" id="form3Example1n" class="form-control form-control-lg" asp-for="CourierLastName" placeholder="Soyadınız" />
+                                                                <span asp-validation-for="CourierLastName" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 mb-3">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1m1" class="form-control form-control-lg" asp-for="CourierEmail" placeholder="E-Posta" />
+                                                    <span asp-validation-for="CourierEmail" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <div class="form-outline">
+                                                    <input type="tel" id="form3Example1n1" class="form-control form-control-lg" asp-for="CourierPhone" placeholder="Telefon Numarası" />
+                                                    <span asp-validation-for="CourierPhone" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 form-outline mb-3">
+                                                <input asp-for="CourierPassword" type="password" id="inputPassword5" class="form-control form-control-lg" placeholder="Şifre" />
+                                                <span asp-validation-for="CourierPassword" class="text-danger"></span>
+                                            </div>
+                                            <div class="col-md-12 form-outline mb-3">
+                                                <input asp-for="CourierRePassword" type="password" id="inputPassword5" class="form-control form-control-lg" placeholder="Şifre Tekrar" />
+                                                <span asp-validation-for="CourierRePassword" class="text-danger"></span>
+                                            </div>
+                                            <div class="col-md-12 form-outline mb-3">
+                                                <input asp-for="GonderimUcreti" type="number" id="inputPassword5" class="form-control form-control-lg" placeholder="Gönderim Ücretiniz" />
+                                                <span asp-validation-for="GonderimUcreti" class="text-danger"></span>
+                                            </div>
+                                            <div class="d-flex justify-content-end pt-3 pl-3">
+                                                <button type="submit" class="btn btn-dark btn-lg ms-2">Kayıt Ol</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
+      
+                 
+    </script>
+
+
+    <link href="~/css/Register.css" rel="stylesheet" />

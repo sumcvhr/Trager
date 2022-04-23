@@ -1,0 +1,90 @@
+﻿@model CourierListVM
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+@await Component.InvokeAsync("UserNavbar")
+
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="#homepage" role="tabpanel">
+        <div class="container bootstrap snippets bootdeys">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+                    <div class="row">
+                        <div class=" col-lg-12 col-md-12 col-sm-12 p-3">
+                            <div class="row card card-body ml-0" style="max-width:100%">
+                                <form asp-action="kuryegetir" asp-controller="User" method="post">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 mb-3" style="border-color:#808080">
+                                        <select name="Id" id="il" class="form-control">
+                                            <option value="">İl</option>
+                                            @foreach (var Il in Model.Ils)
+                                            {
+
+                                                <option value="@Il.Id">@Il.Ad </option>
+                                            }
+                                        </select>
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-sm-12" style="border-color:#808080" id="ilce_div">
+                                        <select name="ilce" id="ilce" class="form-control">
+                                            <option value="">İlçe Seçiniz..</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-sm-6 mt-3">
+                                        <button type="submit" class="btn btn-warning" style="min-width:50%">ARA</button>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (Model.CourierLocations != null)
+                {
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+                        <div class="row text-center">
+                            @foreach (var locations in Model.CourierLocations)
+                            {
+                            <a class="couriercard" href="/Courier/CourierProfile/@locations.CourierId" style="width: 84%; color:#000000">
+                                <div class="col-xl-4 col-sm-6 mb-5">
+                                    <div class="bg-white rounded shadow-sm py-5 px-4">
+                                        <img src="@locations.Courier.AvatarAdress" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                        <h5 class="mb-0">@locations.Courier.CourierName @locations.Courier.CourierLastName</h5>
+                                        <p class="small text-uppercase text-muted">Tel: @locations.Courier.CourierPhone</p>
+                                        <p class="small text-uppercase text-muted">Gönderim Ücreti: @locations.Courier.GonderimUcreti Tl</p>
+                                        <p class="small text-uppercase text-muted">@locations.Ilce.Il.Ad/@locations.Ilce.Ad </p>
+                                        <a href="/Chat/Chat/@locations.CourierId" type="button" class="btn btn-warning" style="min-width:50%">Mesaj Gönder</a>
+                                    </div>
+                                </div>
+                            </a>
+                            }
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+
+    $(function () {
+        $("#il").on("change", function () {
+
+            var SeciliIlId = $("#il").val();
+            $.ajax({
+                type: "GET",
+                url: "/courier/ilcegetir",
+                data: { Id: SeciliIlId },
+                success: function (sonuc) {
+                    $("#ilce_div").html(sonuc);
+                }
+            });
+        })
+    })
+
+</script>
+<link href="~/css/UserHome.css" rel="stylesheet" />

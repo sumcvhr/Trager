@@ -1,0 +1,173 @@
+﻿body {
+    background-color: #212529;
+}
+
+.container {
+    padding: 2rem 0rem;
+}
+
+.close {
+    color: #ffff;
+}
+
+.btn-font {
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #292626;
+    color: white;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.form-btn {
+    text-align: center !important;
+    border-radius: 5px !important;
+    color: white !important;
+}
+
+.btn-round {
+    border-radius: 20px !important;
+}
+
+.btn-info {
+    color: #BEF2FF;
+    width: 80%;
+    background-color: #2E2E2E;
+    border-color: #F27A00;
+    box-shadow: 6px 6px 10px #000000;
+}
+
+.btn-grs {
+    width: 100% !important;
+    margin-top: 20%;
+    height: 80%;
+}
+
+.btn-info:hover {
+    color: #BEF2FF;
+    background-color: #2E2E2E;
+    border-color: #F27A00;
+}
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle {
+    color: #BEF2FF;
+    background-color: #2E2E2E !important;
+    border-color: #F27A00 !important;
+}
+
+    .btn-info:not(:disabled):not(.disabled).active:focus, .btn-info:not(:disabled):not(.disabled):active:focus, .show > .btn-info.dropdown-toggle:focus {
+        box-shadow: 6px 6px 10px #000000 !important;
+    }
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle {
+    color: #BEF2FF;
+    background-color: #2E2E2E !important;
+    border-color: #F27A00 !important;
+}
+
+.btn-info.focus, .btn-info:focus {
+    color: #fff;
+    background-color: #2E2E2E !important;
+    border-color: #F27A00 !important;
+    box-shadow: 6px 6px 10px #000000 !important;
+}
+
+.btn-info.focus, .btn-info:focus {
+    box-shadow: 6px 6px 10px #000000 !important;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog .modal-content {
+        max-width: 400px;
+        padding: 1rem;
+    }
+}
+
+
+.modal-header .close {
+    margin-top: -1.5rem;
+}
+
+
+.form-title {
+    margin: -2rem 0rem 2rem;
+}
+
+.btn-round {
+    border-radius: 3rem;
+}
+
+.delimiter {
+    padding: 1rem;
+}
+
+.social-buttons .btn {
+    margin: 0 0.5rem 1rem;
+}
+
+
+.signup-section {
+    padding: 0.3rem 0rem;
+}
+
+.text-info {
+    color: white !important;
+}
+
+a.text-info:focus, a.text-info:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+.text-login {
+    color: #ffff;
+    text-decoration: none;
+}
+
+    .text-login:hover {
+        color: #ffff;
+        text-decoration: none;
+    }
+
+/*.modal.show .modal-dialog {
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+.modal.fade .modal-dialog {
+    transition: -webkit-transform .3s ease-out !important;
+    transition: transform .3s ease-out !important;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out !important;
+    -webkit-transform: translate(0,-50 px ) !important;
+    transform: translate(0,-50 px ) !important;
+}
+
+.modal.show .modal-dialog {
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+.modal.fade .modal-dialog {
+    transition: -webkit-transform .3s ease-out !important;
+    transition: transform .3s ease-out !important;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out !important;
+    -webkit-transform: translate(0,-50 px ) !important;
+    transform: translate(0,-50 px ) !important;
+}
+
+
+.fade {
+    transition: opacity .15s none;
+}*/
